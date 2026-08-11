@@ -15,9 +15,9 @@ const App = () => {
       githubUrl: "https://github.com/rahul1454singh",
       gallery: [
         { src: "Screenshot 2026-08-11 125040.png", label: "Login Interface" },
-        { src: "Screenshot 2026-08-11 125058.png", label: "Admin Dashboard" },
-        { src: "Screenshot 2026-08-11 125132.png", label: "Student Dashboard" },
-        { src: "Screenshot 2026-08-11 125154.png", label: "Professor Dashboard" }
+        { src: "Screenshot 2026-08-11 165444.png", label: "Admin Dashboard" },
+        { src: "Screenshot 2026-08-11 165523.png", label: "Student Dashboard" },
+        { src: "Screenshot 2026-08-11 165605.png", label: "Professor Dashboard" }
       ],
       details: {
         problem: "Students often submit assignments through scattered email or messaging channels, making submissions difficult to organize and review.",
