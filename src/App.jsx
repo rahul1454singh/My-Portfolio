@@ -169,7 +169,7 @@ const App = () => {
             <motion.h1 variants={fadeUp} className="text-5xl md:text-7xl font-bold tracking-tight mb-4 text-white">Rahul Singh</motion.h1>
             <motion.h2 variants={fadeUp} className="text-2xl md:text-3xl font-bold mb-6" style={{ color: "var(--accent)" }}>Full Stack Developer</motion.h2>
             <motion.p variants={fadeUp} className="text-lg md:text-xl max-w-2xl leading-relaxed mb-10" style={{ color: "var(--text-body)" }}>
-              👋Hey I'm an aspiring full-stack developer who loves bringing ideas to life through complete web applications — pairing clean, intuitive interfaces with solid backend systems and databases. I'm currently exploring full-stack development opportunities and open to remote work.
+              👋Hey , I'm an aspiring full-stack developer who loves bringing ideas to life through complete web applications — pairing clean, intuitive interfaces with solid backend systems and databases. I'm currently exploring full-stack development opportunities and open to remote work.
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-wrap justify-center md:justify-start gap-4">
               <a href="#projects" className="btn-primary">View Featured Project</a>
@@ -196,14 +196,15 @@ const App = () => {
             <motion.h2 variants={fadeUp} className="section-title">About Me</motion.h2>
             <motion.div variants={fadeUp} className="title-underline" />
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {/* Card 1 */}
             <motion.div variants={fadeUp} className="edu-card">
-              <div className="edu-header" style={{ minHeight: "auto", marginBottom: "1.5rem" }}>
+              <div className="edu-header" style={{ alignItems: "center", minHeight: "auto", marginBottom: "1.5rem" }}>
                 <div className="edu-icon">
                   <BookOpen size={24} />
                 </div>
                 <div>
-                  <h3 className="edu-title mt-1.5 text-xl">My Mission</h3>
+                  <h3 className="edu-title mb-0 text-xl">My Mission</h3>
                 </div>
               </div>
               <p className="edu-desc text-base">
@@ -211,30 +212,34 @@ const App = () => {
               </p>
             </motion.div>
 
-            <motion.div variants={stagger} className="flex flex-col gap-6">
-              <motion.div variants={fadeUp} className="edu-card" style={{ padding: "1.75rem" }}>
-                <div className="edu-header" style={{ minHeight: "auto", marginBottom: "1rem" }}>
-                  <div className="edu-icon" style={{ width: "2.5rem", height: "2.5rem", borderRadius: "0.5rem" }}>
-                    <Layers size={18} />
-                  </div>
-                  <div>
-                    <h4 className="edu-title mt-1 text-lg">Full Stack Enthusiast</h4>
-                  </div>
+            {/* Card 2 */}
+            <motion.div variants={fadeUp} className="edu-card">
+              <div className="edu-header" style={{ alignItems: "center", minHeight: "auto", marginBottom: "1.5rem" }}>
+                <div className="edu-icon">
+                  <Layers size={24} />
                 </div>
-                <p className="edu-desc mb-0">I am deeply interested in full-stack development, focusing specifically on understanding the intricate mechanics of web applications—from the frontend UI all the way to backend database transactions.</p>
-              </motion.div>
+                <div>
+                  <h3 className="edu-title mb-0 text-xl">Full Stack Enthusiast</h3>
+                </div>
+              </div>
+              <p className="edu-desc text-base">
+                I am deeply interested in full-stack development, focusing specifically on understanding the intricate mechanics of web applications—from the frontend UI all the way to backend database transactions.
+              </p>
+            </motion.div>
 
-              <motion.div variants={fadeUp} className="edu-card" style={{ padding: "1.75rem" }}>
-                <div className="edu-header" style={{ minHeight: "auto", marginBottom: "1rem" }}>
-                  <div className="edu-icon" style={{ width: "2.5rem", height: "2.5rem", borderRadius: "0.5rem" }}>
-                    <BrainCircuit size={18} />
-                  </div>
-                  <div>
-                    <h4 className="edu-title mt-1 text-lg">Problem Solver</h4>
-                  </div>
+            {/* Card 3 */}
+            <motion.div variants={fadeUp} className="edu-card">
+              <div className="edu-header" style={{ alignItems: "center", minHeight: "auto", marginBottom: "1.5rem" }}>
+                <div className="edu-icon">
+                  <BrainCircuit size={24} />
                 </div>
-                <p className="edu-desc mb-0">I thrive on debugging scalable issues, continuously learning new technologies, and ensuring that every component of a complex system works seamlessly together.</p>
-              </motion.div>
+                <div>
+                  <h3 className="edu-title mb-0 text-xl">Problem Solver</h3>
+                </div>
+              </div>
+              <p className="edu-desc text-base">
+                I thrive on debugging scalable issues, continuously learning new technologies, and ensuring that every component of a complex system works seamlessly together.
+              </p>
             </motion.div>
           </div>
         </motion.div>
@@ -388,7 +393,7 @@ const App = () => {
             <motion.div variants={fadeUp} className="title-underline" />
           </div>
           <div className="cert-grid">
-            {CERTIFICATES.slice(0, showAllCertificates ? CERTIFICATES.length : 4).map((cert, i) => (
+            {CERTIFICATES.slice(0, showAllCertificates ? CERTIFICATES.length : 3).map((cert, i) => (
               <motion.div key={i} variants={fadeUp} className="cert-card">
                 <div className="cert-preview">
                   {cert.type === "Image" ? (
@@ -409,7 +414,7 @@ const App = () => {
               </motion.div>
             ))}
           </div>
-          {CERTIFICATES.length > 4 && (
+          {CERTIFICATES.length > 3 && (
             <div className="mt-12 flex justify-center">
               <button 
                 className="btn-primary"
