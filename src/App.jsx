@@ -530,7 +530,7 @@ const App = () => {
       {/* Navbar component (Desktop) — handles navigation, scroll-spy active highlighting, and social links */}
       <motion.nav
         initial={{ y: -100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, ease: "easeOut" }}
-        className="navbar hidden md:block !z-[9999]" role="navigation" aria-label="Primary navigation"
+        className="navbar hidden md:block !z-[9999] bg-[#09090b]/70 backdrop-blur-xl" role="navigation" aria-label="Primary navigation"
       >
         <div className="nav-container">
           <a href="#home" className="nav-brand">Rahul</a>
