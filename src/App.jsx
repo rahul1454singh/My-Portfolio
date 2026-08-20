@@ -197,27 +197,43 @@ const App = () => {
             <motion.div variants={fadeUp} className="title-underline" />
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <motion.div variants={fadeUp} className="glass-card">
-              <div className="flex items-center gap-3 mb-4">
-                <BookOpen size={20} color="var(--accent)" />
-                <h3 className="text-xl font-bold">My Mission</h3>
+            <motion.div variants={fadeUp} className="edu-card">
+              <div className="edu-header" style={{ minHeight: "auto", marginBottom: "1.5rem" }}>
+                <div className="edu-icon">
+                  <BookOpen size={24} />
+                </div>
+                <div>
+                  <h3 className="edu-title mt-1.5 text-xl">My Mission</h3>
+                </div>
               </div>
-              <p className="leading-relaxed text-base">
+              <p className="edu-desc text-base">
                 My ultimate goal is to grow through challenging, real-world development experiences, refining my architectural skills to eventually become a highly capable senior software engineer.
               </p>
             </motion.div>
-            <motion.div variants={stagger} className="flex flex-col gap-4">
-              <motion.div variants={fadeUp} className="glass-card" style={{ padding: "1.5rem" }}>
-                <h4 className="font-bold mb-2 flex items-center gap-2 text-white">
-                  <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: "var(--accent)" }} /> Full Stack Enthusiast
-                </h4>
-                <p className="text-base leading-relaxed">I am deeply interested in full-stack development, focusing specifically on understanding the intricate mechanics of web applications—from the frontend UI all the way to backend database transactions.</p>
+
+            <motion.div variants={stagger} className="flex flex-col gap-6">
+              <motion.div variants={fadeUp} className="edu-card" style={{ padding: "1.75rem" }}>
+                <div className="edu-header" style={{ minHeight: "auto", marginBottom: "1rem" }}>
+                  <div className="edu-icon" style={{ width: "2.5rem", height: "2.5rem", borderRadius: "0.5rem" }}>
+                    <Layers size={18} />
+                  </div>
+                  <div>
+                    <h4 className="edu-title mt-1 text-lg">Full Stack Enthusiast</h4>
+                  </div>
+                </div>
+                <p className="edu-desc mb-0">I am deeply interested in full-stack development, focusing specifically on understanding the intricate mechanics of web applications—from the frontend UI all the way to backend database transactions.</p>
               </motion.div>
-              <motion.div variants={fadeUp} className="glass-card" style={{ padding: "1.5rem" }}>
-                <h4 className="font-bold mb-2 flex items-center gap-2 text-white">
-                  <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: "var(--accent)" }} /> Problem Solver
-                </h4>
-                <p className="text-base leading-relaxed">I thrive on debugging scalable issues, continuously learning new technologies, and ensuring that every component of a complex system works seamlessly together.</p>
+
+              <motion.div variants={fadeUp} className="edu-card" style={{ padding: "1.75rem" }}>
+                <div className="edu-header" style={{ minHeight: "auto", marginBottom: "1rem" }}>
+                  <div className="edu-icon" style={{ width: "2.5rem", height: "2.5rem", borderRadius: "0.5rem" }}>
+                    <BrainCircuit size={18} />
+                  </div>
+                  <div>
+                    <h4 className="edu-title mt-1 text-lg">Problem Solver</h4>
+                  </div>
+                </div>
+                <p className="edu-desc mb-0">I thrive on debugging scalable issues, continuously learning new technologies, and ensuring that every component of a complex system works seamlessly together.</p>
               </motion.div>
             </motion.div>
           </div>
