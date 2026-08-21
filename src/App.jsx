@@ -171,9 +171,18 @@ const App = () => {
             <motion.p variants={fadeUp} className="text-lg md:text-xl max-w-2xl leading-relaxed mb-10" style={{ color: "var(--text-body)" }}>
               👋Hey , I'm an aspiring full-stack developer who loves bringing ideas to life through complete web applications — pairing clean, intuitive interfaces with solid backend systems and databases. I'm currently exploring full-stack development opportunities and open to remote work.
             </motion.p>
-            <motion.div variants={fadeUp} className="flex flex-wrap justify-center md:justify-start gap-4">
-              <a href="#projects" className="btn-primary">View Featured Project</a>
-              <a href="/fullstac.pdf" target="_blank" rel="noreferrer" className="btn-secondary"><FileText size={18} /> Open Resume</a>
+            <motion.div variants={fadeUp} className="flex flex-col gap-4 w-fit mx-auto md:mx-0">
+              <div className="flex flex-wrap justify-center md:justify-start gap-4">
+                <a href="#projects" className="btn-primary">View Featured Project</a>
+                <a href="/fullstac.pdf" target="_blank" rel="noreferrer" className="btn-secondary"><FileText size={18} /> Open Resume</a>
+              </div>
+              <div className="flex items-center justify-center gap-2 w-full py-2.5 rounded-full border border-purple-500/40 bg-purple-500/10 shadow-[0_0_15px_rgba(168,85,247,0.3)]">
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
+                </span>
+                <span className="text-purple-400 font-medium text-sm tracking-wide">Open to Opportunities</span>
+              </div>
             </motion.div>
           </motion.div>
           <motion.div className="relative mt-8 md:mt-0" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7 }}>
