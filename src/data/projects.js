@@ -42,17 +42,19 @@ export const PROJECTS = [
     type: "Full Stack Web Application",
     description:
       "A full-stack, real-time food delivery web application that handles the entire lifecycle of a food order: from browsing the menu to the delivery partner navigating to the customer's house.",
-    technologies: ["React (Vite)", "Supabase", "PostgreSQL", "Cloudinary", "Razorpay", "React-Leaflet", "Deno (Edge Functions)"],
+    technologies: ["React (Vite)", "CSS Variables", "Supabase", "PostgreSQL", "Deno (Edge Functions)", "Cloudinary", "Razorpay", "React-Leaflet", "OpenStreetMap", "Lucide React"],
+    liveUrl: "https://khanahub.vercel.app/",
     githubUrl: "https://github.com/rahul1454singh/KhanaHub",
     previewImage: "/Screenshot 2026-09-03 214302.png",
     gallery: [
       { src: "/Screenshot 2026-09-03 214302.png", label: "Customer Menu & Landing Interface" },
-      { src: "/Screenshot 2026-09-03 214328.png", label: "Checkout & Map Location" },
-      { src: "/Screenshot 2026-09-03 214354.png", label: "Secure Payments via Razorpay" },
-      { src: "/Screenshot 2026-09-03 214414.png", label: "Live Order Tracking" },
-      { src: "/Screenshot 2026-09-03 214515.png", label: "Restaurant Owner Live Hub" },
-      { src: "/Screenshot 2026-09-03 214628.png", label: "Restaurant Analytics & Reports" },
-      { src: "/Screenshot 2026-09-03 214637.png", label: "Delivery Partner Dashboard" },
+      { src: "/Screenshot 2026-09-03 214328.png", label: "Our Menu and Secure Payment via Razorpay" },
+      { src: "/Screenshot 2026-09-03 214354.png", label: "Owner Dashboard / Owner Panel" },
+      { src: "/Screenshot 2026-09-03 214414.png", label: "Owner Can Edit Any Item" },
+      { src: "/Screenshot 2026-09-03 214515.png", label: "Delivery Boy Live Location Toward Order Location & Send OTP" },
+      { src: "/Screenshot 2026-09-03 214628.png", label: "Live Location of Delivery Boy (Customer Side)" },
+      { src: "/Screenshot 2026-09-03 214637.png", label: "Customer Order Record" },
+      { src: "/Screenshot 2026-09-03 215953.png", label: "Project Card (About Me Style)" },
     ],
     details: {
       problem:

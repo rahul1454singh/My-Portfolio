@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ExternalLink, X, Eye } from "lucide-react";
 import { FaGithub as Github } from "react-icons/fa";
-import { SiReact, SiNodedotjs, SiExpress, SiMongodb, SiMongoose, SiCloudinary } from "react-icons/si";
+import { SiReact, SiNodedotjs, SiExpress, SiMongodb, SiMongoose, SiCloudinary, SiSupabase, SiPostgresql, SiRazorpay, SiDeno, SiVite, SiCss, SiOpenstreetmap } from "react-icons/si";
 import { PROJECTS } from "../data/projects.js";
 
 const fadeUp = {
@@ -17,11 +17,18 @@ const stagger = {
 
 const TECH_ICONS = {
   "React.js": { icon: <SiReact size={14} />, color: "#61DAFB" },
+  "React (Vite)": { icon: <SiVite size={14} />, color: "#646CFF" },
   "Node.js": { icon: <SiNodedotjs size={14} />, color: "#339933" },
   "Express.js": { icon: <SiExpress size={14} />, color: "#ffffff" },
   "MongoDB": { icon: <SiMongodb size={14} />, color: "#47A248" },
   "Mongoose": { icon: <SiMongoose size={14} />, color: "#880000" },
   "Cloudinary": { icon: <SiCloudinary size={14} />, color: "#3448C5" },
+  "Supabase": { icon: <SiSupabase size={14} />, color: "#3ECF8E" },
+  "PostgreSQL": { icon: <SiPostgresql size={14} />, color: "#4169E1" },
+  "Razorpay": { icon: <SiRazorpay size={14} />, color: "#02042B" },
+  "Deno (Edge Functions)": { icon: <SiDeno size={14} />, color: "#ffffff" },
+  "CSS Variables": { icon: <SiCss size={14} />, color: "#1572B6" },
+  "OpenStreetMap": { icon: <SiOpenstreetmap size={14} />, color: "#7EBC6F" },
 };
 
 export default function ProjectDetail() {

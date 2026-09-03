@@ -18,6 +18,7 @@ import {
   SiC, SiCplusplus, SiJavascript, SiMysql, SiHtml5, SiCss,
   SiTailwindcss, SiReact, SiVite, SiNodedotjs, SiExpress,
   SiMongodb, SiMongoose, SiCloudinary, SiGit, SiGithub, SiPostman, SiOpenjdk,
+  SiSupabase, SiPostgresql, SiRazorpay, SiDeno, SiOpenstreetmap
 } from "react-icons/si";
 import { PROJECTS, CERTIFICATES } from "./data/projects.js";
 
@@ -81,7 +82,9 @@ const SKILL_CATEGORIES = [
       { icon: <SiMongodb />, color: "#47A248", label: "Mongo", tooltip: "MongoDB" },
       { icon: <SiMongoose />, color: "#880000", label: "Mongoose", tooltip: "Mongoose" },
       { icon: <SiMysql />, color: "#4479A1", label: "MySQL", tooltip: "MySQL" },
+      { icon: <SiPostgresql />, color: "#4169E1", label: "Postgres", tooltip: "PostgreSQL" },
       { icon: <SiCloudinary />, color: "#3448C5", label: "CDN", tooltip: "Cloudinary" },
+      { icon: <SiSupabase />, color: "#3ECF8E", label: "Supabase", tooltip: "Supabase" },
     ],
   },
   {
@@ -106,12 +109,19 @@ const SKILL_CATEGORIES = [
 ];
 
 const TECH_ICONS = {
-  "React.js": { icon: <SiReact size={12} />, color: "#61DAFB" },
-  "Node.js": { icon: <SiNodedotjs size={12} />, color: "#339933" },
-  "Express.js": { icon: <SiExpress size={12} />, color: "#ffffff" },
-  "MongoDB": { icon: <SiMongodb size={12} />, color: "#47A248" },
-  "Mongoose": { icon: <SiMongoose size={12} />, color: "#880000" },
-  "Cloudinary": { icon: <SiCloudinary size={12} />, color: "#3448C5" },
+  "React.js": { icon: <SiReact size={14} />, color: "#61DAFB" },
+  "React (Vite)": { icon: <SiVite size={14} />, color: "#646CFF" },
+  "Node.js": { icon: <SiNodedotjs size={14} />, color: "#339933" },
+  "Express.js": { icon: <SiExpress size={14} />, color: "#ffffff" },
+  "MongoDB": { icon: <SiMongodb size={14} />, color: "#47A248" },
+  "Mongoose": { icon: <SiMongoose size={14} />, color: "#880000" },
+  "Cloudinary": { icon: <SiCloudinary size={14} />, color: "#3448C5" },
+  "Supabase": { icon: <SiSupabase size={14} />, color: "#3ECF8E" },
+  "PostgreSQL": { icon: <SiPostgresql size={14} />, color: "#4169E1" },
+  "Razorpay": { icon: <SiRazorpay size={14} />, color: "#02042B" },
+  "Deno (Edge Functions)": { icon: <SiDeno size={14} />, color: "#ffffff" },
+  "CSS Variables": { icon: <SiCss size={14} />, color: "#1572B6" },
+  "OpenStreetMap": { icon: <SiOpenstreetmap size={14} />, color: "#7EBC6F" },
 };
 
 /* ─── Main Component ─── */
@@ -286,42 +296,64 @@ const App = () => {
 
       {/* Featured Project section — showcases primary portfolio piece with key metrics and tech stack */}
       <section id="projects" className="section" style={{ background: "var(--bg-base)" }}>
-        <motion.div className="container" variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: false, margin: "0px", amount: 0.1 }}>
-          <div className="section-header">
-            <motion.div variants={fadeUp} className="section-icon-tile"><Rocket size={20} /></motion.div>
-            <motion.span variants={fadeUp} className="section-eyebrow">What I've Built</motion.span>
-            <motion.h2 variants={fadeUp} className="section-title">Featured Projects</motion.h2>
-            <motion.div variants={fadeUp} className="title-underline" />
-          </div>
-          <div className="flex flex-col gap-10">
-            {PROJECTS.map((proj) => (
-              <motion.div key={proj.id} variants={scaleUp} className="project-card-wrapper" onClick={() => navigate(`/project/${proj.slug}`)}>
-                <div className="project-img-container">
-                  <img src={proj.previewImage} alt="Project Preview" className="project-preview-img" />
+        <div className="container">
+          <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: false, margin: "0px", amount: 0.1 }}>
+            <div className="section-header">
+              <motion.div variants={fadeUp} className="section-icon-tile"><Rocket size={20} /></motion.div>
+              <motion.span variants={fadeUp} className="section-eyebrow">What I've Built</motion.span>
+              <motion.h2 variants={fadeUp} className="section-title">Featured Projects</motion.h2>
+              <motion.div variants={fadeUp} className="title-underline" />
+            </div>
+          </motion.div>
+
+          {/* Responsive Grid: 1 column sticky stack on mobile, 2 on desktop */}
+          <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto pb-12">
+            {PROJECTS.map((proj, index) => (
+              <motion.div 
+                key={proj.id} 
+                variants={fadeUp} 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                className="edu-card cursor-pointer group p-0 overflow-hidden flex flex-col h-full sticky md:static"
+                style={{ top: `calc(100px + ${index * 15}px)` }} 
+                onClick={() => navigate(`/project/${proj.slug}`)}
+              >
+                <div className="w-full aspect-video bg-[var(--bg-base)] border-b border-[var(--border-base)] overflow-hidden relative shrink-0">
+                  <img src={proj.previewImage} alt="Project Preview" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-card)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                 </div>
-                <div className="project-content">
-                  <span className="text-sm font-bold text-[var(--accent)] tracking-wider uppercase mb-2 block font-sans">{proj.type}</span>
-                  <h3 className="text-3xl font-bold mb-3 text-white">{proj.title}</h3>
-                  <p className="mb-6 text-base leading-relaxed">{proj.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-8">
-                    {proj.technologies.map(tech => (
-                      <span key={tech} className="project-tech-tag font-sans">
+                <div className="p-6 flex flex-col h-full">
+                  <span className="text-xs font-bold text-[var(--accent)] tracking-wider uppercase mb-2 block font-sans shrink-0">{proj.type}</span>
+                  <h3 className="text-2xl font-bold mb-3 text-white shrink-0 min-h-[64px]">{proj.title}</h3>
+                  
+                  <p className="mb-6 text-sm text-[var(--text-secondary)] leading-relaxed line-clamp-3 shrink-0">{proj.description}</p>
+                  
+                  <div className="flex flex-wrap gap-2 mb-6 mt-auto content-start">
+                    {proj.technologies.slice(0, 6).map(tech => (
+                      <span key={tech} className="text-[0.7rem] px-2.5 py-1 bg-[var(--bg-base)] border border-[var(--border-base)] rounded-md text-[var(--text-muted)] font-sans font-medium flex items-center gap-1.5 whitespace-nowrap">
                         {TECH_ICONS[tech] && <span style={{ color: TECH_ICONS[tech].color }}>{TECH_ICONS[tech].icon}</span>}
                         {tech}
                       </span>
                     ))}
+                    {proj.technologies.length > 6 && (
+                      <span className="text-[0.7rem] px-2.5 py-1 bg-[var(--bg-base)] border border-[var(--border-base)] rounded-md text-[var(--text-muted)] font-sans font-medium whitespace-nowrap">
+                        +{proj.technologies.length - 6}
+                      </span>
+                    )}
                   </div>
-                  <div className="flex flex-wrap gap-4 mt-auto">
-                    <button className="btn-primary py-2 px-5 text-sm" onClick={(e) => { e.stopPropagation(); navigate(`/project/${proj.slug}`); }}>
+
+                  <div className="flex flex-wrap gap-3 pt-4 border-t border-[var(--border-base)] shrink-0">
+                    <button className="btn-primary py-2 px-4 text-xs" onClick={(e) => { e.stopPropagation(); navigate(`/project/${proj.slug}`); }}>
                       Details <ArrowRight size={14} />
                     </button>
                     {proj.liveUrl && (
-                      <a href={proj.liveUrl} target="_blank" rel="noreferrer" className="btn-secondary py-2 px-5 text-sm" onClick={e => e.stopPropagation()}>
+                      <a href={proj.liveUrl} target="_blank" rel="noreferrer" className="btn-secondary py-2 px-4 text-xs" onClick={e => e.stopPropagation()}>
                         <ExternalLink size={14} /> Live
                       </a>
                     )}
                     {proj.githubUrl && (
-                      <a href={proj.githubUrl} target="_blank" rel="noreferrer" className="btn-secondary py-2 px-5 text-sm" onClick={e => e.stopPropagation()}>
+                      <a href={proj.githubUrl} target="_blank" rel="noreferrer" className="btn-secondary py-2 px-4 text-xs" onClick={e => e.stopPropagation()}>
                         <Github size={14} /> Source
                       </a>
                     )}
@@ -330,7 +362,7 @@ const App = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Education section — academic background displayed in aligned vertical cards */}
