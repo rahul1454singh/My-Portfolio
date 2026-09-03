@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ExternalLink, X, Eye } from "lucide-react";
 import { FaGithub as Github } from "react-icons/fa";
@@ -25,9 +25,10 @@ const TECH_ICONS = {
 };
 
 export default function ProjectDetail() {
+  const { slug } = useParams();
   const navigate = useNavigate();
   const [selectedImage, setSelectedImage] = useState(null);
-  const project = PROJECTS[0];
+  const project = PROJECTS.find(p => p.slug === slug) || PROJECTS[0];
 
   // Returns the full detailed project view layout with gallery and descriptive breakdowns
   return (

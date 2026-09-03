@@ -290,38 +290,46 @@ const App = () => {
           <div className="section-header">
             <motion.div variants={fadeUp} className="section-icon-tile"><Rocket size={20} /></motion.div>
             <motion.span variants={fadeUp} className="section-eyebrow">What I've Built</motion.span>
-            <motion.h2 variants={fadeUp} className="section-title">Featured Project</motion.h2>
+            <motion.h2 variants={fadeUp} className="section-title">Featured Projects</motion.h2>
             <motion.div variants={fadeUp} className="title-underline" />
           </div>
-          <motion.div variants={scaleUp} className="project-card-wrapper" onClick={() => navigate(`/project/${project.slug}`)}>
-            <div className="project-img-container">
-              <img src={project.previewImage} alt="Project Preview" className="project-preview-img" />
-            </div>
-            <div className="project-content">
-              <span className="text-sm font-bold text-[var(--accent)] tracking-wider uppercase mb-2 block font-sans">{project.type}</span>
-              <h3 className="text-3xl font-bold mb-3 text-white">{project.title}</h3>
-              <p className="mb-6 text-base leading-relaxed">{project.description}</p>
-              <div className="flex flex-wrap gap-2 mb-8">
-                {project.technologies.map(tech => (
-                  <span key={tech} className="project-tech-tag font-sans">
-                    {TECH_ICONS[tech] && <span style={{ color: TECH_ICONS[tech].color }}>{TECH_ICONS[tech].icon}</span>}
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-4 mt-auto">
-                <button className="btn-primary py-2 px-5 text-sm" onClick={(e) => { e.stopPropagation(); navigate(`/project/${project.slug}`); }}>
-                  Details <ArrowRight size={14} />
-                </button>
-                <a href={project.liveUrl} target="_blank" rel="noreferrer" className="btn-secondary py-2 px-5 text-sm" onClick={e => e.stopPropagation()}>
-                  <ExternalLink size={14} /> Live
-                </a>
-                <a href={project.githubUrl} target="_blank" rel="noreferrer" className="btn-secondary py-2 px-5 text-sm" onClick={e => e.stopPropagation()}>
-                  <Github size={14} /> Source
-                </a>
-              </div>
-            </div>
-          </motion.div>
+          <div className="flex flex-col gap-10">
+            {PROJECTS.map((proj) => (
+              <motion.div key={proj.id} variants={scaleUp} className="project-card-wrapper" onClick={() => navigate(`/project/${proj.slug}`)}>
+                <div className="project-img-container">
+                  <img src={proj.previewImage} alt="Project Preview" className="project-preview-img" />
+                </div>
+                <div className="project-content">
+                  <span className="text-sm font-bold text-[var(--accent)] tracking-wider uppercase mb-2 block font-sans">{proj.type}</span>
+                  <h3 className="text-3xl font-bold mb-3 text-white">{proj.title}</h3>
+                  <p className="mb-6 text-base leading-relaxed">{proj.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {proj.technologies.map(tech => (
+                      <span key={tech} className="project-tech-tag font-sans">
+                        {TECH_ICONS[tech] && <span style={{ color: TECH_ICONS[tech].color }}>{TECH_ICONS[tech].icon}</span>}
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex flex-wrap gap-4 mt-auto">
+                    <button className="btn-primary py-2 px-5 text-sm" onClick={(e) => { e.stopPropagation(); navigate(`/project/${proj.slug}`); }}>
+                      Details <ArrowRight size={14} />
+                    </button>
+                    {proj.liveUrl && (
+                      <a href={proj.liveUrl} target="_blank" rel="noreferrer" className="btn-secondary py-2 px-5 text-sm" onClick={e => e.stopPropagation()}>
+                        <ExternalLink size={14} /> Live
+                      </a>
+                    )}
+                    {proj.githubUrl && (
+                      <a href={proj.githubUrl} target="_blank" rel="noreferrer" className="btn-secondary py-2 px-5 text-sm" onClick={e => e.stopPropagation()}>
+                        <Github size={14} /> Source
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </section>
 
