@@ -1,4 +1,4 @@
-﻿// Shared project data
+// Shared project data
 export const PROJECTS = [
   {
     id: 1,
@@ -33,6 +33,43 @@ export const PROJECTS = [
       ],
       whyBuilt:
         "My objective was to engineer a comprehensive, real-world system that transcends typical academic projects. By architecting this platform from the ground up, I gained practical expertise in designing secure RESTful APIs, implementing role-based access control, managing complex database schemas, and handling cloud-based file processing within a robust deployment pipeline.",
+    },
+  },
+  {
+    id: 2,
+    slug: "khanahub",
+    title: "KhanaHub",
+    type: "Full Stack Web Application",
+    description:
+      "A full-stack, real-time food delivery web application that handles the entire lifecycle of a food order: from browsing the menu to the delivery partner navigating to the customer's house.",
+    technologies: ["React (Vite)", "Supabase", "PostgreSQL", "Cloudinary", "Razorpay", "React-Leaflet", "Deno (Edge Functions)"],
+    githubUrl: "https://github.com/rahul1454singh/KhanaHub",
+    previewImage: "/Screenshot 2026-09-03 214302.png",
+    gallery: [
+      { src: "/Screenshot 2026-09-03 214302.png", label: "Customer Menu & Landing Interface" },
+      { src: "/Screenshot 2026-09-03 214328.png", label: "Checkout & Map Location" },
+      { src: "/Screenshot 2026-09-03 214354.png", label: "Secure Payments via Razorpay" },
+      { src: "/Screenshot 2026-09-03 214414.png", label: "Live Order Tracking" },
+      { src: "/Screenshot 2026-09-03 214515.png", label: "Restaurant Owner Live Hub" },
+      { src: "/Screenshot 2026-09-03 214628.png", label: "Restaurant Analytics & Reports" },
+      { src: "/Screenshot 2026-09-03 214637.png", label: "Delivery Partner Dashboard" },
+    ],
+    details: {
+      problem:
+        "Traditional food delivery apps often lack truly instant cross-platform updates, resulting in delayed notifications for customers and out-of-sync dashboards for restaurant owners and delivery partners.",
+      solution:
+        "A blazing-fast, real-time platform utilizing Supabase Realtime for instant synchronization across all user roles without page refreshes, and Cloudinary for optimized media delivery.",
+      roles: [
+        { role: "CUSTOMER", desc: "Browses a dynamic menu, filters by category/diet, drops a pin on an interactive Map, pays securely via Razorpay, and tracks their order status live (Pending ➔ Confirmed ➔ Out for Delivery ➔ Delivered)." },
+        { role: "RESTAURANT OWNER", desc: "Uses a Live Order Hub that instantly alerts upon payment. Can Accept, Reject, and dispatch orders. Also features revenue analytics, top-selling items charts, and menu management." },
+        { role: "DELIVERY PARTNER", desc: "Accesses an active delivery dashboard with Map routing to the customer's dropped pin, viewing fulfillment details to mark trips as 'Delivered'." },
+      ],
+      storage: [
+        { name: "Supabase (PostgreSQL)", desc: "Powers the real-time database, authentication, and secure edge functions for payment verification." },
+        { name: "Cloudinary", desc: "Hosts all media (hero video, logo, food images) utilizing f_auto and q_auto compression for instant mobile loading." },
+      ],
+      whyBuilt:
+        "Designed to master real-time data sync, secure edge functions, and advanced media optimization. The challenge was ensuring perfect state synchronization between three distinct user dashboards simultaneously while keeping the application extremely fast and responsive.",
     },
   },
 ];
